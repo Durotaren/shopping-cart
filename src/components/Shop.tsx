@@ -1,14 +1,6 @@
 import { useState, useEffect } from 'react';
-
-type Product = {
-  id: number;
-  title: string;
-  price: number;
-  description: string;
-  category: string;
-  image: string;
-  rating: number;
-};
+import type { Product } from '../types';
+import Item from './Item';
 
 export default function Shop() {
   const [items, setItems] = useState<Product[]>([]);
@@ -19,13 +11,10 @@ export default function Shop() {
       .then((data: Product[]) => setItems(data));
   }, []);
   return (
-    <div>
+    <ul>
       {items.map((item) => (
-        <p>
-          {item.category}
-          {item.title}
-        </p>
+        <Item item={item} />
       ))}
-    </div>
+    </ul>
   );
 }
