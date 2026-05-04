@@ -8,10 +8,10 @@ export default function Shop() {
   useEffect(() => {
     fetch('https://fakestoreapi.com/products')
       .then((response) => response.json())
-      .then((data: Product[]) => setItems(data.slice(0, 6)));
+      .then((data: Product[]) => setItems(data));
   }, []);
   return (
-    <ul className="flex">
+    <ul className="flex flex-wrap bg-white py-10 px-5 gap-5">
       {items.map((item) => (
         <Item item={item} />
       ))}
