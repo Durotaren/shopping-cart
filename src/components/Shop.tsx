@@ -11,7 +11,7 @@ export default function Shop() {
       .then((data: Product[]) => setItems(data));
   }, []);
   return (
-    <ul className="flex flex-wrap bg-white py-10 px-5 gap-5">
+    <ul className="flex flex-wrap justify-around bg-white py-6 px-5 gap-5 rounded-md">
       {items.map((item) => (
         <Item item={item} />
       ))}

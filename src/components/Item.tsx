@@ -29,13 +29,16 @@ const names: Record<number, string> = {
 
 export default function Item({ item }: ItemProps) {
   return (
-    <li key={item.id} className="mx-auto flex flex-col">
-      <div className="rounded-md p-2 bg-[#E8E8E8]">
-        <img src={item.image} alt="" className="h-60 w-60" />
+    <li
+      key={item.id}
+      className="flex flex-col items-center my-2 bg-[#E8E8E8] rounded-lg"
+    >
+      <div className="rounded-md p-10 w-70 h-70">
+        <img src={item.image} alt="" className="w-full h-full object-contain" />
       </div>
-      <p className="text-black text-center w-50">{names[item.id]}</p>
+      <p className="text-black text-center">{names[item.id]}</p>
+      <p className="text-black">{item.price}$</p>
       <button className="text-black">Add to Cart</button>
-      <button className="text-black">{item.price}$</button>
     </li>
   );
 }
