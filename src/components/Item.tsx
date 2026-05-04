@@ -31,14 +31,16 @@ export default function Item({ item }: ItemProps) {
   return (
     <li
       key={item.id}
-      className="flex flex-col items-center my-2 bg-[#E8E8E8] rounded-lg"
+      className="flex flex-col justify-around gap-3 items-center my-2 bg-[#E8E8E8] rounded-lg"
     >
       <div className="rounded-md p-10 w-70 h-70">
         <img src={item.image} alt="" className="w-full h-full object-contain" />
       </div>
       <p className="text-black text-center">{names[item.id]}</p>
       <p className="text-black">{item.price}$</p>
-      <button className="text-black">Add to Cart</button>
+      <button className="text-black w-[90%] p-2 mb-3 rounded-md border-black border-1">
+        Add to Cart
+      </button>
     </li>
   );
 }
