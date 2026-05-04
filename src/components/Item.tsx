@@ -1,4 +1,5 @@
 import type { Product } from '../types';
+import { useState } from 'react';
 
 type ItemProps = {
   item: Product;
@@ -28,17 +29,34 @@ const names: Record<number, string> = {
 };
 
 export default function Item({ item }: ItemProps) {
+  const [count, setCount] = useState<number>(1);
+
   return (
     <li
       key={item.id}
-      className="flex flex-col justify-around gap-3 items-center my-2 bg-[#E8E8E8] rounded-lg"
+      className="flex flex-col justify-around gap-3 items-center my-2 bg-[#FFFFFF] rounded-lg"
     >
       <div className="rounded-md p-10 w-70 h-70">
         <img src={item.image} alt="" className="w-full h-full object-contain" />
       </div>
       <p className="text-black text-center">{names[item.id]}</p>
       <p className="text-black">{item.price}$</p>
-      <button className="text-black w-[90%] p-2 mb-3 rounded-md border-black border-1">
+      <div className="flex gap-6">
+        <button
+          onClick={() => setCount((prev) => prev - 1)}
+          className="w-7 h-7 text-black rounded-md bg-white border-black border-1 flex justify-center items-center cursor-pointer"
+        >
+          -
+        </button>
+        <p className="text-black">{count}</p>
+        <button
+          onClick={() => setCount((prev) => prev + 1)}
+          className="w-7 h-7 text-black rounded-md bg-white border-black border-1 flex justify-center items-center cursor-pointer"
+        >
+          +
+        </button>
+      </div>
+      <button className="text-black w-[90%] p-2 mb-3 rounded-md border-black border-1 cursor-pointer">
         Add to Cart
       </button>
     </li>
