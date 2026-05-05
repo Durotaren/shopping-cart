@@ -41,14 +41,14 @@ export default function Item({ item }: ItemProps) {
       </div>
       <p className="text-black text-center">{names[item.id]}</p>
       <p className="text-black">{item.price}$</p>
-      <div className="flex gap-6">
+      <div className="flex justify-between items-center gap-5">
         <button
           onClick={() => setCount((prev) => prev - 1)}
           className="w-7 h-7 text-black rounded-md bg-white border-black border-1 flex justify-center items-center cursor-pointer"
         >
           -
         </button>
-        <p className="text-black">{count}</p>
+        <p className="text-black w-[20px] flex justify-center">{count}</p>
         <button
           onClick={() => setCount((prev) => prev + 1)}
           className="w-7 h-7 text-black rounded-md bg-white border-black border-1 flex justify-center items-center cursor-pointer"
