@@ -34,7 +34,7 @@ export default function Item({ item }: ItemProps) {
   return (
     <li
       key={item.id}
-      className="flex flex-col justify-around gap-3 items-center my-2 bg-[#FFFFFF] rounded-lg border border-transparent hover:border-gray-400 transition"
+      className="flex flex-col justify-around gap-3 items-center my-2 bg-[#FFFFFF] rounded-lg border border-transparent hover:border-gray-600 transition"
     >
       <div className="rounded-md p-10 w-70 h-70">
         <img src={item.image} alt="" className="w-full h-full object-contain" />
@@ -43,7 +43,11 @@ export default function Item({ item }: ItemProps) {
       <p className="text-black">{item.price}$</p>
       <div className="flex justify-between items-center gap-5">
         <button
-          onClick={() => setCount((prev) => prev - 1)}
+          onClick={() => {
+            if (count > 0) {
+              setCount((prev) => prev - 1);
+            }
+          }}
           className="w-7 h-7 text-black rounded-md bg-white border-black border-1 flex justify-center items-center cursor-pointer"
         >
           -
