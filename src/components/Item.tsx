@@ -34,7 +34,7 @@ export default function Item({ item }: ItemProps) {
   return (
     <li
       key={item.id}
-      className="flex flex-col justify-around gap-3 items-center my-2 bg-[#FFFFFF] rounded-lg hover:border-1 border-gray-400"
+      className="flex flex-col justify-around gap-3 items-center my-2 bg-[#FFFFFF] rounded-lg border border-transparent hover:border-gray-400 transition"
     >
       <div className="rounded-md p-10 w-70 h-70">
         <img src={item.image} alt="" className="w-full h-full object-contain" />
