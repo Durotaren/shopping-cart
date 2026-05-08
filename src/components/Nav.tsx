@@ -4,8 +4,11 @@ import { Link } from 'react-router';
 export default function Nav() {
   return (
     <div className="w-[15vw] w-[250px] h-[56px] mx-auto mb-[1vw] bg-black rounded-4xl flex items-center cursor-pointer">
-      <div className="ml-[8px] h-10 w-10 bg-white rounded-4xl mr-6">
+      <div className="ml-[8px] h-10 w-10 bg-white rounded-4xl mr-6 relative">
         <img className="p-2" src={cartSvg} alt="shopping cart" />
+        <div className="absolute rounded-xl h-4 w-4 bg-orange-400 flex justify-center items-center text-sm top-0 right-0">
+          3
+        </div>
       </div>
       <div className="flex gap-5">
         <Link to="home" className="cursor-pointer">
