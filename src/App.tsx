@@ -1,7 +1,7 @@
 import Header from './components/Header';
 import Nav from './components/Nav';
 import { useState } from 'react';
-import { Outlet } from 'react-router';
+import { Outlet, useOutletContext } from 'react-router';
 
 function App() {
   const [cartQuantity, changeCartQuantity] = useState(0);
@@ -12,7 +12,7 @@ function App() {
         <Header />
         <Nav quantity={cartQuantity} />
       </div>
-      <Outlet />
+      <Outlet context={changeCartQuantity} />
     </div>
   );
 }

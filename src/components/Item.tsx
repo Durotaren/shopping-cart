@@ -1,3 +1,4 @@
+import { useOutletContext } from 'react-router';
 import type { Product } from '../types';
 import { useState } from 'react';
 
@@ -30,6 +31,8 @@ const names: Record<number, string> = {
 
 export default function Item({ item }: ItemProps) {
   const [count, setCount] = useState<number>(1);
+  const changeCartQuantity: React.Dispatch<React.SetStateAction<number>> =
+    useOutletContext();
 
   return (
     <li
@@ -60,7 +63,10 @@ export default function Item({ item }: ItemProps) {
           +
         </button>
       </div>
-      <button className="text-black w-[90%] p-2 mb-3 rounded-md border-black border-1 cursor-pointer">
+      <button
+        className="text-black w-[90%] p-2 mb-3 rounded-md border-black border-1 cursor-pointer"
+        onClick={() => changeCartQuantity((prev) => (prev += count))}
+      >
         Add to Cart
       </button>
     </li>
