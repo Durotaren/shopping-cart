@@ -1,7 +1,7 @@
 import Header from './components/Header';
 import Nav from './components/Nav';
 import { useState } from 'react';
-import { Outlet, useOutletContext } from 'react-router';
+import { Outlet } from 'react-router';
 
 function App() {
   const [cartQuantity, changeCartQuantity] = useState(0);

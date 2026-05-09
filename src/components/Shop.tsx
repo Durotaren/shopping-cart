@@ -13,7 +13,7 @@ export default function Shop() {
   return (
     <>
       {items.length && (
-        <ul className="flex flex-wrap bg-[#E8E8E8] justify-around py-6 px-5 gap-5 rounded-md">
+        <ul className="flex flex-wrap bg-[#E8E8E8] justify-around py-6 px-5 mb-3 gap-5 rounded-md">
           {items.map((item) => (
             <Item item={item} />
           ))}
