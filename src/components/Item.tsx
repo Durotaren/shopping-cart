@@ -32,11 +32,9 @@ const names: Record<number, string> = {
 
 export default function Item({ item }: ItemProps) {
   const [count, setCount] = useState<number>(1);
-  const { changeCartQuantity, changeItemsInCart }: ContextTypes =
-    useOutletContext();
+  const { changeItemsInCart }: ContextTypes = useOutletContext();
 
   function whenClicked() {
-    changeCartQuantity((prev) => prev + count);
     changeItemsInCart((prev) => {
       const existing = prev.find(
         (currItem) => currItem.title === names[item.id],

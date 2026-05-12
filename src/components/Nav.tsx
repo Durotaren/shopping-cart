@@ -3,11 +3,10 @@ import { Link } from 'react-router';
 import type { AddedProduct } from '../types';
 
 interface NavProps {
-  quantity: number;
   itemsInCart: AddedProduct[];
 }
 
-export default function Nav({ quantity, itemsInCart }: NavProps) {
+export default function Nav({ itemsInCart }: NavProps) {
   const total =
     itemsInCart.reduce((acc, curr) => {
       return acc + curr.quantity;
