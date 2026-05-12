@@ -5,6 +5,7 @@ import { Outlet } from 'react-router';
 
 function App() {
   const [cartQuantity, changeCartQuantity] = useState(0);
+  const [itemsInCart, changeItemsInCart] = useState([]);
 
   return (
     <div className="bg-[#FFFFFF] h-[100%] py-[1vw] px-[2vw] text-white rounded-lg">
@@ -12,7 +13,14 @@ function App() {
         <Header />
         <Nav quantity={cartQuantity} />
       </div>
-      <Outlet context={changeCartQuantity} />
+      <Outlet
+        context={{
+          cartQuantity,
+          changeCartQuantity,
+          itemsInCart,
+          changeItemsInCart,
+        }}
+      />
     </div>
   );
 }

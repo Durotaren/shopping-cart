@@ -1,4 +1,4 @@
-export type Product = {
+type Product = {
   id: number;
   title: string;
   price: number;
@@ -7,3 +7,12 @@ export type Product = {
   image: string;
   rating: number;
 };
+
+interface ContextTypes {
+  cartQuantity: number;
+  changeCartQuantity: React.Dispatch<React.SetStateAction<number>>;
+  itemsInCart: number;
+  changeItemsInCart: React.Dispatch<React.SetStateAction<number>>;
+}
+
+export type { Product, ContextTypes };
