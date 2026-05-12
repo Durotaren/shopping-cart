@@ -1,4 +1,4 @@
-import type { AddedProduct, ContextTypes } from '../types';
+import type { AddedProduct } from '../types';
 
 type Props = {
   item: AddedProduct;

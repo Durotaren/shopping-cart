@@ -20,14 +20,14 @@ export default function Nav({ itemsInCart }: NavProps) {
           {total}
         </div>
       </div>
-      <div className="flex gap-5">
-        <Link to="home" className="cursor-pointer">
+      <div className="flex">
+        <Link to="home" className="cursor-pointer pr-[10px]">
           Home
         </Link>
-        <Link to="shop" className="cursor-pointer">
+        <Link to="shop" className="cursor-pointer px-[10px]">
           Shop
         </Link>
-        <Link to="cart" className="cursor-pointer">
+        <Link to="cart" className="cursor-pointer pl-[10px]">
           Cart
         </Link>
       </div>

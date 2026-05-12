@@ -13,12 +13,14 @@ function App() {
         <Header />
         <Nav itemsInCart={itemsInCart} />
       </div>
-      <Outlet
-        context={{
-          itemsInCart,
-          changeItemsInCart,
-        }}
-      />
+      <div className="flex flex-col items-center">
+        <Outlet
+          context={{
+            itemsInCart,
+            changeItemsInCart,
+          }}
+        />
+      </div>
     </div>
   );
 }

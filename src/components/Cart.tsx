@@ -7,7 +7,7 @@ export default function Cart() {
 
   return (
     <>
-      <ul>
+      <ul className="flex flex-col w-80 justify-center items-center">
         {itemsInCart.map((item) => (
           <ItemInCart item={item} changeItemsInCart={changeItemsInCart} />
         ))}
