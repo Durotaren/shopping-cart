@@ -36,7 +36,7 @@ export default function Item({ item }: ItemProps) {
     useOutletContext();
 
   function whenClicked() {
-    changeCartQuantity((prev) => (prev += count));
+    changeCartQuantity((prev) => prev + count);
     changeItemsInCart((prev) => {
       const existing = prev.find(
         (currItem) => currItem.title === names[item.id],
@@ -45,7 +45,7 @@ export default function Item({ item }: ItemProps) {
       if (existing) {
         return prev.map((product) =>
           product.title === names[item.id]
-            ? { ...product, quantity: (product.quantity += count) }
+            ? { ...product, quantity: product.quantity + count }
             : product,
         );
       }

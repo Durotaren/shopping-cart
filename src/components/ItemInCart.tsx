@@ -1,4 +1,5 @@
-import type { AddedProduct } from '../types';
+import { useOutletContext } from 'react-router';
+import type { AddedProduct, ContextTypes } from '../types';
 
 type Props = {
   item: AddedProduct;
@@ -6,6 +7,8 @@ type Props = {
 };
 
 export default function ItemInCart({ item, changeItemsInCart }: Props) {
+  const { changeCartQuantity }: ContextTypes = useOutletContext();
+
   return (
     <li
       key={item.id}
@@ -16,6 +19,18 @@ export default function ItemInCart({ item, changeItemsInCart }: Props) {
       </div>
       <p className="text-black text-center">{item.title}</p>
       <p className="text-black">{item.price}$</p>
+      <p className="text-black">{item.quantity}</p>
+      <button
+        className="text-black"
+        onClick={() => {
+          changeCartQuantity((prev) => prev - item.quantity);
+          changeItemsInCart((prev) =>
+            prev.filter((product) => product.id !== item.id),
+          );
+        }}
+      >
+        click here to delete
+      </button>
     </li>
   );
 }
