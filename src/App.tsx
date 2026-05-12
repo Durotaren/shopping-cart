@@ -12,7 +12,7 @@ function App() {
     <div className="bg-[#FFFFFF] h-[100%] py-[1vw] px-[2vw] text-white rounded-lg">
       <div className="flex relative">
         <Header />
-        <Nav quantity={cartQuantity} />
+        <Nav quantity={cartQuantity} itemsInCart={itemsInCart} />
       </div>
       <Outlet
         context={{
