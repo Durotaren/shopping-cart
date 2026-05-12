@@ -9,7 +9,7 @@ export default function Cart() {
     <>
       <ul>
         {itemsInCart.map((item) => (
-          <ItemInCart item={item} />
+          <ItemInCart item={item} changeItemsInCart={changeItemsInCart} />
         ))}
       </ul>
     </>

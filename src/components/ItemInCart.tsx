@@ -2,9 +2,10 @@ import type { AddedProduct } from '../types';
 
 type Props = {
   item: AddedProduct;
+  changeItemsInCart: React.Dispatch<React.SetStateAction<AddedProduct[]>>;
 };
 
-export default function ItemInCart({ item }: Props) {
+export default function ItemInCart({ item, changeItemsInCart }: Props) {
   return (
     <li
       key={item.id}
