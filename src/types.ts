@@ -11,8 +11,15 @@ type Product = {
 interface ContextTypes {
   cartQuantity: number;
   changeCartQuantity: React.Dispatch<React.SetStateAction<number>>;
-  itemsInCart: number;
-  changeItemsInCart: React.Dispatch<React.SetStateAction<number>>;
+  itemsInCart: Product[];
+  changeItemsInCart: React.Dispatch<React.SetStateAction<AddedProduct[]>>;
 }
 
-export type { Product, ContextTypes };
+interface AddedProduct {
+  title: string;
+  price: number;
+  image: string;
+  quantity: number;
+}
+
+export type { Product, ContextTypes, AddedProduct };

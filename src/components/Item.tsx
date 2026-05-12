@@ -32,8 +32,21 @@ const names: Record<number, string> = {
 
 export default function Item({ item }: ItemProps) {
   const [count, setCount] = useState<number>(1);
-  const { itemsInCart, changeCartQuantity, changeItemsInCart }: ContextTypes =
+  const { changeCartQuantity, changeItemsInCart }: ContextTypes =
     useOutletContext();
+
+  function whenClicked() {
+    changeCartQuantity((prev) => (prev += count));
+    changeItemsInCart((prev) => [
+      ...prev,
+      {
+        price: item.price,
+        title: names[item.id],
+        image: item.image,
+        quantity: count,
+      },
+    ]);
+  }
 
   return (
     <li
@@ -66,7 +79,7 @@ export default function Item({ item }: ItemProps) {
       </div>
       <button
         className="text-black w-[90%] p-2 mb-3 rounded-md border-black border-1 cursor-pointer"
-        onClick={() => changeCartQuantity((prev) => (prev += count))}
+        onClick={whenClicked}
       >
         Add to Cart
       </button>
