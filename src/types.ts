@@ -11,11 +11,12 @@ type Product = {
 interface ContextTypes {
   cartQuantity: number;
   changeCartQuantity: React.Dispatch<React.SetStateAction<number>>;
-  itemsInCart: Product[];
+  itemsInCart: AddedProduct[];
   changeItemsInCart: React.Dispatch<React.SetStateAction<AddedProduct[]>>;
 }
 
 interface AddedProduct {
+  id: number;
   title: string;
   price: number;
   image: string;

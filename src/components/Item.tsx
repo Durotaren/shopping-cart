@@ -37,15 +37,30 @@ export default function Item({ item }: ItemProps) {
 
   function whenClicked() {
     changeCartQuantity((prev) => (prev += count));
-    changeItemsInCart((prev) => [
-      ...prev,
-      {
-        price: item.price,
-        title: names[item.id],
-        image: item.image,
-        quantity: count,
-      },
-    ]);
+    changeItemsInCart((prev) => {
+      const existing = prev.find(
+        (currItem) => currItem.title === names[item.id],
+      );
+
+      if (existing) {
+        return prev.map((product) =>
+          product.title === names[item.id]
+            ? { ...product, quantity: (product.quantity += count) }
+            : product,
+        );
+      }
+
+      return [
+        ...prev,
+        {
+          id: item.id,
+          price: item.price,
+          title: names[item.id],
+          image: item.image,
+          quantity: count,
+        },
+      ];
+    });
   }
 
   return (
