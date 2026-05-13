@@ -69,6 +69,7 @@ export default function Item({ item }: ItemProps) {
       <div className="rounded-md p-10 w-70 h-70">
         <img src={item.image} alt="" className="w-full h-full object-contain" />
       </div>
+      <div className="bg-gray-600 h-[2px] w-[90%] rounded-xl"></div>
       <p className="text-black text-center">{names[item.id]}</p>
       <p className="text-black">{item.price}$</p>
       <div className="flex justify-between items-center gap-5">

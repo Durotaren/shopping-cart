@@ -7,11 +7,13 @@ export default function Cart() {
 
   return (
     <>
-      <ul className="flex flex-col w-80 justify-center items-center">
-        {itemsInCart.map((item) => (
-          <ItemInCart item={item} changeItemsInCart={changeItemsInCart} />
-        ))}
-      </ul>
+      {itemsInCart.length && (
+        <ul className="flex flex-col w-80 justify-between items-center bg-[#E8E8E8] rounded-lg">
+          {itemsInCart.map((item) => (
+            <ItemInCart item={item} changeItemsInCart={changeItemsInCart} />
+          ))}
+        </ul>
+      )}
     </>
   );
 }
