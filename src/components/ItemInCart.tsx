@@ -18,7 +18,7 @@ export default function ItemInCart({ item, changeItemsInCart }: Props) {
       <p className="text-black">{item.price}$</p>
       <p className="text-black">{item.quantity}</p>
       <button
-        className="text-black cursor-pointer p-2 border border-gray-600 rounded-lg mb-2"
+        className="text-black cursor-pointer p-2 border border-gray-600 rounded-lg mb-5"
         onClick={() => {
           changeItemsInCart((prev) =>
             prev.filter((product) => product.id !== item.id),

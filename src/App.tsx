@@ -21,7 +21,9 @@ function App() {
           }}
         />
       </div>
-      <div className="text-black">© 2026 Your Name. All rights reserved.</div>
+      <div className="text-black">
+        © 2026 Ivan Dimitrov. All rights reserved.
+      </div>
     </div>
   );
 }
