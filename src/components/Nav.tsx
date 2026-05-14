@@ -21,13 +21,22 @@ export default function Nav({ itemsInCart }: NavProps) {
         </div>
       </div>
       <div className="flex">
-        <Link to="home" className="cursor-pointer px-2">
+        <Link
+          to="home"
+          className="cursor-pointer px-2 hover:text-violet-400 transition"
+        >
           Home
         </Link>
-        <Link to="shop" className="cursor-pointer px-2">
+        <Link
+          to="shop"
+          className="cursor-pointer px-2 hover:text-orange-400 transition"
+        >
           Shop
         </Link>
-        <Link to="cart" className="cursor-pointer px-2">
+        <Link
+          to="cart"
+          className="cursor-pointer px-2 hover:text-lime-400 transition"
+        >
           Cart
         </Link>
       </div>
