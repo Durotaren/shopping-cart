@@ -92,7 +92,7 @@ export default function Item({ item }: ItemProps) {
         </button>
       </div>
       <button
-        className="text-black w-[90%] p-2 mb-3 rounded-md border-black border-1 cursor-pointer"
+        className="text-black w-[90%] p-2 mb-3 rounded-md border-black border-1 cursor-pointer hover:bg-[#00C853] transition"
         onClick={whenClicked}
       >
         Add to Cart
