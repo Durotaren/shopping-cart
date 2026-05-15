@@ -9,7 +9,7 @@ function App() {
 
   return (
     <div className="bg-[#FFFFFF] h-[100%] py-[1vw] px-[2vw] text-white rounded-lg">
-      <div className="flex relative">
+      <div className="flex relative max-md:flex-col max-md:gap-3 max-md:items-center">
         <Header />
         <Nav itemsInCart={itemsInCart} />
       </div>
