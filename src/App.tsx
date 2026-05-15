@@ -21,7 +21,7 @@ function App() {
           }}
         />
       </div>
-      <div className="text-black">
+      <div className="text-black mt-2">
         © 2026 Ivan Dimitrov. All rights reserved.
       </div>
     </div>
